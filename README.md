@@ -1,4 +1,4 @@
-# Perspo-Field-Shift
+# Perspo
 # Монголын Тариалангийн Туслах — Mongolian Crop Co-Pilot
 
 NASA Space Apps Challenge 2026 · **Field Shift: Adapting Farms with NASA Data**
