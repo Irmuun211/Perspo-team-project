@@ -35,8 +35,8 @@ const REGIONS = {
               fallback: { lastSpring: 147, firstFall: 263, gdd: 1550, heat30: 14, rain: 120, maySoil: 0.22, lateFrost: 0.5, earlyFrost: 0.4 } }
 };
 const REGION_ORDER = ["selenge", "darkhan", "khovsgol", "bulgan", "tov", "khentii", "uvs"];
-// Wide screens: zoom 6 keeps the central pins from overlapping; phones use 5
-const MAP_HOME = { center: [48.6, 102.8], zoom: window.innerWidth >= 900 ? 6 : 5 };
+// Wide screens: zoom 6 keeps the central pins from overlapping; tablets 5; phones 4 (whole country fits)
+const MAP_HOME = { center: [47.6, 103.5], zoom: window.innerWidth >= 900 ? 6 : window.innerWidth >= 640 ? 5 : 4 };
 
 // -----------------------------------------------------------------------------
 // Crop requirements used by scoring.js. Pairs are [good, bad] — values at or

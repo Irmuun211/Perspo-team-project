@@ -261,3 +261,12 @@ html.dark .chart-avg-text { fill: #e2e8f0; }
 html.dark .score-ring { background: conic-gradient(var(--c) calc(var(--p) * 1%), #334155 0); }
 html.dark .score-ring > span { background: #111a2e; }
 html.dark .skeleton { background: linear-gradient(90deg, #1e293b 0px, #334155 60px, #1e293b 120px); background-size: 400px 100%; }
+
+/* Phones: hide scrollbars on swipeable strips */
+.no-scrollbar { scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+/* Bigger tap targets for map buttons on touch screens */
+@media (max-width: 639px) {
+  #map-type-control button, #btn-locate { min-height: 40px; }
+  .leaflet-control-attribution { font-size: 9px; max-width: 70vw; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}

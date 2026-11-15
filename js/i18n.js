@@ -12,7 +12,7 @@ const TRANSLATIONS = {
     appSubtitle: "NASA-ийн хиймэл дагуул, уур амьсгалын өгөгдөлд суурилсан тариалангийн сэлгээний шийдвэр дэмжих систем",
 
     mapHeading: "Газрын зураг дээр дурын цэг дээр дарна уу",
-    mapHint: "Монгол орны аль ч цэг дээр дарахад NASA POWER-ийн 20 жилийн өгөгдлийг татаж, таримал бүрийн тохирцыг үнэлнэ. Эсвэл доорх онцлох бүсүүдээс сонгоно уу.",
+    mapHint: "Монгол орны аль ч цэг дээр дарахад NASA POWER-ийн 20 жилийн өгөгдлийг татаж, таримал бүрийн тохирцыг үнэлнэ. Эсвэл «Миний байршил» товчоор өөрийн байршлыг, эсвэл доорх онцлох бүсүүдээс сонгоно уу.",
     layerMap: "Газрын зураг",
     layerSat: "Хиймэл дагуул",
     btnOverview: "Бүх бүс",
@@ -20,7 +20,7 @@ const TRANSLATIONS = {
     outsideMongolia: "Энэ цэг Монгол улсын хилээс гадна байна. Хил дотор дарна уу.",
     popupCoordLabel: "Координат:",
     popupElevLabel: "Өндөршил:",
-    popupNearestLabel: "Ойрын онцлох бүс:",
+    popupNearestLabel: "Харьцуулах онцлох бүс:",
     loadingShort: "Ачаалж байна…",
 
     statusLive: "NASA POWER шууд өгөгдөл (2006–2025)",
@@ -35,7 +35,7 @@ const TRANSLATIONS = {
       droughtNoSoil: { title: "NASA анхааруулга: Хуурай улирал",
                 desc: "5–9-р сард дунджаар {rain} мм хур тунадас ордог. Хөрсийг нүцгэн орхивол салхинд хийсэх эрсдэлтэй — ус бага шаарддаг, хөрс бүрхэх сэлгээг сонгоно уу." },
       heat:   { title: "NASA анхааруулга: Зуны дунд үеийн халуун",
-                desc: "Цэцэглэлтийн үед (6/15–8/15) жилд дунджаар {heat} өдөр 30°C-ээс давж байна{trend}. Ийм халуун улаан буудай, рапсын үр тогтолтыг бууруулдаг." },
+                desc: "Цэцэглэлтийн үед (6/15–8/15) жилд дунджаар {heat} өдөр 30°C-ээс давж байна{trend}. Ийм халуун улаан буудай, тосны ургамлын үр тогтолтыг бууруулдаг." },
       drought:{ title: "NASA анхааруулга: Хуурайшилт ба хаврын хөрсний чийгийн дутагдал",
                 desc: "5–9-р сард дунджаар {rain} мм хур тунадас ордог, 5-р сарын өнгөн хөрсний чийгшил {soil}/100. Хөрсийг нүцгэн орхивол салхинд хийсэх эрсдэлтэй — ус бага шаарддаг, хөрс бүрхэх сэлгээг сонгоно уу." },
       ok:     { title: "NASA: Энэ газрын уур амьсгал тариалан эрхлэхэд харьцангуй тааламжтай",
@@ -70,8 +70,22 @@ const TRANSLATIONS = {
     bestConditions: "Сайн ургах нөхцөл:",
     pastureNote: "Энэ газарт нэг наст таримал тогтвортой ургах нөхцөл муу байна. Бэлчээр эсвэл хадлангийн талбай болгон ашиглах нь илүү зохимжтой байж магадгүй.",
     lakeToast: "🌊 Энэ бол {lake}. Тариалан эрхлэх боломжгүй — эрэг орчмын газар дээр дарна уу.",
-    checkingWater: "🔎 Газрын зургаас шалгаж байна…",
+    checkingWater: "🔎 Газрын зургаас шалгаж байна (нуур, барилга, байршил)…",
     unnamedWater: "нуур / усан гадаргуу",
+    builtToast: "🏘️ Энэ цэг суурьшлын бүс байна ({place}). Барилга, хотын газар тариалангийн талбай биш — хотоос гадна газар дээр дарна уу.",
+    unnamedBuilt: "барилга / суурин газар",
+    locateMe: "Миний байршил",
+    seeResults: "Үр дүнг харах",
+    showAllCrops: "Бүх {n} таримлыг харах",
+    showFewerCrops: "Цөөнийг харуулах",
+    myLocation: "Миний байршил",
+    geoLocating: "📡 Таны байршлыг тодорхойлж байна…",
+    geoDenied: "Байршил тогтоох зөвшөөрөл олгогдоогүй байна. Хөтчийн тохиргооноос зөвшөөрнө үү.",
+    geoFailed: "Байршлыг тодорхойлж чадсангүй. Дахин оролдох эсвэл газрын зураг дээр дарна уу.",
+    geoUnsupported: "Таны төхөөрөмж байршил тогтоохыг дэмжихгүй байна. Газрын зураг дээр дарна уу.",
+    geoOutside: "Таны байршил Монгол улсаас гадна байна. Газрын зураг дээр Монгол доторх цэг сонгоно уу.",
+    geoBuiltNote: "📍 Та суурин газарт байна. NASA-ийн өгөгдөл ~50 км хамардаг тул эргэн тойрны тариалангийн талбайн нөхцөлийг харуулж байна.",
+    popupAreaLabel: "Байршил:",
 
     controlsHeading: "Таны тэргүүлэх зорилго юу вэ?",
     priorities: { balanced: "Тэнцвэртэй", soil: "Хөрс сэргээх", feed: "Малын тэжээл", income: "Орлого", water: "Ус хэмнэх" },
@@ -100,7 +114,7 @@ const TRANSLATIONS = {
     thFeed: "Малын тэжээл",
 
     disclaimer: "Анхааруулга: Энэ систем нь NASA POWER-ийн уур амьсгалын өгөгдөлд суурилсан шийдвэр дэмжих хэрэгсэл бөгөөд тариаланчийн туршлага, мэргэжилтний зөвлөгөөг орлохгүй. Тариалангийн сэлгээгээ өөрчлөхөөс өмнө орон нутгийн агрономичтой заавал зөвлөлдөнө үү.",
-    footerSources: "Өгөгдөл: NASA POWER өдөр тутмын цэгийн API (MERRA-2 загварт суурилсан, ~50 км тор) • Хил: Natural Earth • Нуур, гол: © OpenStreetMap • Газрын зураг: Esri",
+    footerSources: "Өгөгдөл: NASA POWER өдөр тутмын цэгийн API (MERRA-2 загварт суурилсан, ~50 км тор) • Хил: Natural Earth • Нуур, барилга, газрын нэр: © OpenStreetMap • Газрын зураг: Esri",
     footerMethod: "Аргачлал: 2016–2025 оны дунджийг таримал бүрийн температур, хяруу, усны шаардлагатай харьцуулсан дүрэмд суурилсан оноо.",
 
     reasons: {
@@ -124,19 +138,19 @@ const TRANSLATIONS = {
       darkhan:  { shortName: "Дархан-Уул", fullName: "Дархан-Уул аймаг",      zoneTag: "Судалгааны төв" },
       khovsgol: { shortName: "Хөвсгөл",  fullName: "Хөвсгөл (Тариалан сум)", zoneTag: "Хойд сэрүүн бүс" },
       bulgan:   { shortName: "Булган",   fullName: "Булган аймаг",            zoneTag: "Ойт хээрийн тариалангийн бүс" },
-      tov:      { shortName: "Төв",      fullName: "Төв аймаг (Борнуур орчим)", zoneTag: "Тал хээрийн бүс" },
+      tov:      { shortName: "Төв",      fullName: "Төв аймаг", zoneTag: "Тал хээрийн бүс" },
       khentii:  { shortName: "Хэнтий",   fullName: "Хэнтий аймаг",            zoneTag: "Зүүн тал хээр" },
       uvs:      { shortName: "Увс",      fullName: "Увс аймаг (Улаангом)",     zoneTag: "Баруун хуурай бүс" }
     },
 
     crops: {
-      wheat:        { name: "Улаан буудай", role: "Үр тариа", best: "Сэрүүн зун; цэцэглэлтийн үед 12–22°C, 30°C-ээс дээш халуун хортой" },
+      wheat:        { name: "Улаан буудай", role: "Үр тариа", best: "Сэрүүн зун; цэцэглэлтийн үед 12–22°C, 30°C-ээс дээш халуунд тохиромжгүй" },
       barley:       { name: "Арвай", role: "Үр тариа / соёолж", best: "Хамгийн богино хугацаанд (70–90 хоног) боловсорно; ган, сэрүүнд тэсвэртэй" },
       oats:         { name: "Овъёс", role: "Үр тариа / тэжээл", best: "Сэрүүн, чийглэг зун; халуунд мэдрэг" },
-      potato:       { name: "Төмс", role: "Хүнс / орлого", best: "Булцуу 15–20°C-д сайн үүснэ; хяруу, дулаан шөнөд мэдрэг" },
-      rapeseed:     { name: "Рапс", role: "Тос / экспорт", best: "Сэрүүн; цэцэглэлтэд 27–30°C-ээс дээш халуун хортой, улаан буудайгаас их ус хэрэглэнэ" },
+      potato:       { name: "Төмс", role: "Хүнс", best: "Булцуу 15–20°C-д сайн үүснэ; хяруу, дулаан шөнөд мэдрэг" },
+      rapeseed:     { name: "Тосны ургамал", role: "Тос", best: "Сэрүүн; цэцэглэлтэд 27–30°C-ээс дээш халуунд тохиромжгүй, улаан буудайгаас их ус хэрэглэнэ" },
       pea:          { name: "Вандуй", role: "Уураг / азот", best: "Хөрсөнд азот хуримтлуулна; сэрүүн, богино улиралд тохиромжтой" },
-      buckwheat:    { name: "Сагаг", role: "Үр тариа / зөгийн бал", best: "Үржил шим багатай хөрсөнд ургана; хяруунд маш мэдрэг" },
+      buckwheat:    { name: "Гурвалжин будаа", role: "Үр тариа ", best: "Үржил шим багатай хөрсөнд ургана; хяруунд маш мэдрэг" },
       alfalfa:      { name: "Шар царгас", role: "Олон наст тэжээл", best: "Өвөл, ганд тэсвэртэй, азот хуримтлуулна" },
       seabuckthorn: { name: "Чацаргана", role: "Олон наст жимс / салхин хаалт", best: "−40…+40°C-д тэсвэртэй, гүн үндэстэй; талбайн зах, ойн зурваст" },
       vegetables:   { name: "Хүнсний ногоо", role: "Байцаа, лууван, манжин", best: "Сэрүүн зун, ихэвчлэн усалгаатай; хяруунд мэдрэг" }
@@ -152,11 +166,11 @@ const TRANSLATIONS = {
         tableSoil: "⚠️ Хөрс доройтно", tableWater: "Дунд", tableFeed: "❌ Бага"
       },
       soil_protector: {
-        name: "Хөрс хамгаалагч", crops: "Улаан буудай ➔  Тосны ургамал ",
-        benefit: "Тосны ургамалын гол үндэс нягтарсан хөрсийг сийрэгжүүлж, үр тарианы өвчний мөчлөгийг тасална. Тосны ургамал улаан буудайгаас ~3 дахин үнэтэй, экспортын зах зээлтэй.",
-        catch: "Тосны ургамалын улаан буудайгаас их ус хэрэглэдэг, сүрэл нь бага тул өвлийн салхинаас хамгаалалт сул. Цэцэглэлтийн үед 27–30°C-ээс дээш халуун хортой. Жижиг үр асгарахаас сэргийлж комбайн тохируулна.",
-        evidence: "Монголд хийсэн судалгаагаар тосны ургамалын талбай улаан буудайгаас их ус хэрэглэж, уринш жилд бага ус хуримтлуулдаг (Miyasaka нар, 2021). Сэлэнгэд рапсын тосны үйлдвэр ажилладаг.",
-        gaps: "Цагаан ялзраг өвчний эрсдэл, тосны үйлдвэр хүртэлх зай, үрийн чанар.",
+        name: "Хөрс хамгаалагч", crops: "Улаан буудай ➔ Тосны ургамал",
+        benefit: "Тосны ургамлын гол үндэс нягтарсан хөрсийг сийрэгжүүлж, үр тарианы өвчний мөчлөгийг тасална. Тосны ургамал улаан буудайгаас ~3 дахин үнэтэй, экспортын зах зээлтэй.",
+        catch: "Тосны ургамал улаан буудайгаас их ус хэрэглэдэг, сүрэл нь бага тул өвлийн салхинаас хамгаалалт сул. Цэцэглэлтийн үед 27–30°C-ээс дээш халуун хортой. Жижиг үр асгарахаас сэргийлж комбайн тохируулна.",
+        evidence: "Монголд хийсэн судалгаагаар тосны ургамлын талбай улаан буудайгаас их ус хэрэглэж, уринш жилд бага ус хуримтлуулдаг (Miyasaka нар, 2021). Сэлэнгэд тосны ургамлын үйлдвэр ажилладаг.",
+        gaps: "Склеротиниоз өвчний эрсдэл, тосны үйлдвэр хүртэлх зай, үрийн чанар.",
         tableSoil: "✅ Үндэс хөрс сийрэгжүүлнэ", tableWater: "Их", tableFeed: "➖ Шахдас"
       },
       livestock_saver: {
@@ -176,7 +190,7 @@ const TRANSLATIONS = {
         tableSoil: "⭐ Азот нэмнэ", tableWater: "Бага–дунд", tableFeed: "➖ Дунд"
       },
       short_season: {
-        name: "Богино улирлын тэжээл", crops: "Арвай ➔ Овъёс + Вандуйн хадлан",
+        name: "Богино улирлын тэжээл", crops: "Арвай ➔ Овъёс + вандуйн хадлан",
         benefit: "Богино хугацаанд боловсордог тул хяруу эрт унадаг хойд бүсэд тохиромжтой. Овъёс-вандуйн холимог уураг ихтэй хадлан өгч, вандуй хөрсөнд азот нэмнэ.",
         catch: "Овъёс халуун, гандуу зунд муу ургана. Хадлангийн үнэ жилээс жилд хэлбэлзэлтэй.",
         evidence: "ADB-ийн дэмжсэн туршилтаар вандуй, овъёс, хөх тариа болон овъёс-вандуй, арвай-вандуйн холимог өндөр ургац өгсөн.",
@@ -195,13 +209,13 @@ const TRANSLATIONS = {
         name: "Бага зардалтай", crops: "Улаан буудай ➔ Гурвалжин будаа",
         benefit: "Гурвалжин будаа үржил шим багатай хөрсөнд ургаж, бордоо бага шаардана. Хурдан ургаж хогийн ургамлыг дарж, зөгийн балны эх үүсвэр болно.",
         catch: "Гурвалжин будаа хяруунд маш мэдрэг тул хяруугүй хугацаа богино газарт эрсдэлтэй. Монголд 2010 оноос тариалж эхэлсэн тул туршлага бага.",
-        evidence: "Төв аймгийн Борнуурт сортын туршилт хийгдсэн; сагаг Монголын бараг бүх бүсэд ургах чадвартай (MJAS).",
+        evidence: "Төв аймгийн Борнуурт сортын туршилт хийгдсэн; Гурвалжин будаа Монголын бараг бүх бүсэд ургах чадвартай (MJAS).",
         gaps: "Тохирох сорт, хальслах үйлдвэр, зах зээлийн үнэ.",
         tableSoil: "✅ Хогийн ургамал дарна", tableWater: "Бага", tableFeed: "❌ Бага"
       },
       shelterbelt: {
         name: "Салхин хаалт + жимс", crops: "Чацарганын зурвас + Арвай",
-        benefit: "Талбайн захад чацарганы эгнээ тарьснаар салхины хурдыг сааруулж, цас тогтоож, азот хуримтлуулна. Жимс нь өндөр үнэтэй, 20 гаруй үйлдвэрт нийлүүлэгддэг.",
+        benefit: "Талбайн захад чацарганы эгнээ тарьснаар салхины хурдыг сааруулж, цас тогтоож, азот хуримтлуулна. Жимс нь өндөр үнэтэй, эрэлт өндөртэй.",
         catch: "Олон наст тул 3–4 жилийн дараа ургац өгч, талбайн хэсгийг байнга эзэлнэ. Эхний жилүүдэд усалгаа хэрэгтэй.",
         evidence: "Монголд 40 гаруй жил, 7,000 гаруй га-д тариалж байна; −40…+40°C, гандуу нөхцөлд тэсвэртэй.",
         gaps: "Суулгацын эх үүсвэр, хашаа, хураалтын ажиллах хүч.",
@@ -218,7 +232,7 @@ const TRANSLATIONS = {
     appSubtitle: "Crop-rotation decision support for Mongolian farmers, powered by NASA Earth data",
 
     mapHeading: "Tap anywhere on the map",
-    mapHint: "Click any spot in Mongolia to pull 20 years of NASA POWER data and score each crop for that place — or pick a featured farming region below.",
+    mapHint: "Click any spot in Mongolia to pull 20 years of NASA POWER data and score each crop for that place. Use “My location” for where you are, or pick a featured farming region below.",
     layerMap: "Map",
     layerSat: "Satellite",
     btnOverview: "All Mongolia",
@@ -226,7 +240,7 @@ const TRANSLATIONS = {
     outsideMongolia: "This point is outside Mongolia. Please tap inside the border.",
     popupCoordLabel: "Coordinates:",
     popupElevLabel: "Elevation:",
-    popupNearestLabel: "Nearest featured region:",
+    popupNearestLabel: "Closest featured region:",
     loadingShort: "Loading…",
 
     statusLive: "Live NASA POWER data (2006–2025)",
@@ -276,8 +290,22 @@ const TRANSLATIONS = {
     bestConditions: "Grows best when:",
     pastureNote: "Conditions here are poor for annual crops. This land may be better used as pasture or hay meadow.",
     lakeToast: "🌊 This is {lake} — not farmland. Tap on the land nearby instead.",
-    checkingWater: "🔎 Checking the map…",
+    checkingWater: "🔎 Checking the map (water, buildings, place name)…",
     unnamedWater: "a lake / water surface",
+    builtToast: "🏘️ This spot is built-up land ({place}). Buildings and towns aren't farmland — tap on open land outside the town.",
+    unnamedBuilt: "buildings / settlement",
+    locateMe: "My location",
+    seeResults: "See results",
+    showAllCrops: "Show all {n} crops",
+    showFewerCrops: "Show fewer",
+    myLocation: "My location",
+    geoLocating: "📡 Finding your location…",
+    geoDenied: "Location permission was denied. Allow it in your browser settings.",
+    geoFailed: "Couldn't get your location. Try again or tap the map.",
+    geoUnsupported: "This device can't share its location. Tap the map instead.",
+    geoOutside: "Your location is outside Mongolia. Tap a spot inside Mongolia on the map.",
+    geoBuiltNote: "📍 You're in a built-up area. NASA data covers ~50 km, so this shows conditions for the farmland around you.",
+    popupAreaLabel: "Area:",
 
     controlsHeading: "What matters most to you?",
     priorities: { balanced: "Balanced", soil: "Soil health", feed: "Livestock feed", income: "Income", water: "Save water" },
@@ -306,7 +334,7 @@ const TRANSLATIONS = {
     thFeed: "Livestock feed",
 
     disclaimer: "Disclaimer: This is a decision-support tool based on NASA POWER climate data. It does not replace farmer experience or expert advice. Always consult a local Mongolian agronomist before changing your crop rotation.",
-    footerSources: "Data: NASA POWER daily point API (MERRA-2 based, ~50 km grid) • Border: Natural Earth • Lakes & rivers: © OpenStreetMap contributors • Basemaps: Esri",
+    footerSources: "Data: NASA POWER daily point API (MERRA-2 based, ~50 km grid) • Border: Natural Earth • Water, buildings & place names: © OpenStreetMap contributors • Basemaps: Esri",
     footerMethod: "Method: 2016–2025 averages compared with each crop's temperature, frost and water needs using transparent rule-based scores.",
 
     reasons: {

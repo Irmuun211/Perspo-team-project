@@ -15,6 +15,17 @@ The app opens in Mongolian, with a switch to English.
 You need an internet connection for NASA POWER, the map tiles, Tailwind and Leaflet.
 There's no API key and no server.
 
+## Phones
+
+The layout adapts to small screens:
+- compact header
+- region buttons in a swipeable strip under the map, plus a "See results ↓" button
+- 2-column climate cards and a chart sized to the screen
+- the top 5 crops first, with "Show all"
+- swipeable strategy cards, and a stacked summary list instead of the wide table
+
+Pinch to zoom the map.
+
 ## Files
 
 | File | What it holds |
@@ -28,6 +39,7 @@ There's no API key and no server.
 | `js/app.js` | Map, user interaction and rendering |
 | `js/mongolia-border.js` | Simplified border used for the "inside Mongolia?" check (Natural Earth) |
 | `js/mongolia-lakes.js` | Rough outlines of 19 large lakes, used only as a backup if OpenStreetMap doesn't answer |
+| `js/mongolia-aimags.js` | Simplified province (aimag) borders, used as a backup for naming tapped points |
 
 ## Method
 
@@ -43,9 +55,14 @@ There's no API key and no server.
 3. **Scoring:** the 2016–2025 averages are compared with each crop's needs (`CROPS` in `data.js`) using transparent linear penalties. Each crop is rated good, risky or poor, and the app shows the reasons.
 4. **Strategies:** a strategy's fit is 0.6 × the average crop score plus 0.4 × the weakest crop's score. The ranking then adds the farmer's chosen priority (soil, feed, income, water). The current practice (continuous wheat) is always shown.
 5. **Trends:** 2021–2025 compared with 2006–2015.
-6. **Lakes and rivers:** each tap is first checked against OpenStreetMap water areas through the Overpass API, whose shorelines match the basemap. If the tap is on water, the app names it and makes no NASA request. This check is needed because NASA POWER's ~50 km grid counts most lakes as land. If Overpass doesn't answer within 5 s, the app falls back to rough Natural Earth outlines.
-7. **Caching:** results are kept for the browser session (`sessionStorage`), so going back to a region you've already opened is instant.
-8. **Fallback:** if NASA POWER can't be reached, the app uses *approximate* built-in values and labels them clearly.
+6. **What's under the tap:** two OpenStreetMap services are asked in parallel:
+   - **Overpass API:** the app downloads the real outlines of buildings, towns (residential/industrial land), airports and ponds near the tap, and tests whether the point is inside one. This catches unnamed buildings, which a simple lookup misses. Water is stopped with a message (NASA POWER's ~50 km grid counts most lakes as land). Built-up land is stopped too, because it isn't farmland.
+   - **Nominatim:** OSM's official address service gives the district (дүүрэг / сум) and province (аймаг / Ulaanbaatar), shown in the pin, popup and alert. Requests are limited to 1 per second, as its usage policy requires.
+
+   If either service is down, the app falls back to rough Natural Earth lake and province outlines. Each check is logged to the browser console as `[place check]` to help with debugging.
+7. **My location:** the 📍 button uses the browser's location (it needs HTTPS, which GitHub Pages provides). The location goes through the same checks. If you're in a town, the app still shows results with a note, because NASA's ~50 km data describes the farmland around you.
+8. **Caching:** results are kept for the browser session (`sessionStorage`), so going back to a region you've already opened is instant.
+9. **Fallback:** if NASA POWER can't be reached, the app uses *approximate* built-in values and labels them clearly.
 
 ## Limitations (stated in the app)
 
@@ -59,7 +76,7 @@ There's no API key and no server.
 ## Sources
 
 - NASA POWER — https://power.larc.nasa.gov
-- OpenStreetMap water areas via the Overpass API (© OpenStreetMap contributors, ODbL) — https://overpass-api.de
+- OpenStreetMap via the Overpass API and Nominatim (© OpenStreetMap contributors, ODbL) — https://overpass-api.de, https://nominatim.org
 - Natural Earth 1:10m lakes and country borders (public domain) — https://www.naturalearthdata.com
 - Basemaps: Esri World Street Map, World Dark Gray Canvas, World Imagery
 - FAO GIEWS Country Brief: Mongolia (2025)
